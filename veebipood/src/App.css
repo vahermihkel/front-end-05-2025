@@ -1,0 +1,32 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.nupp {
+  background-color:bisque;
+}
+
+.nupp:hover {
+  border-color: brown;
+}
+
+.nupp:focus {
+  outline: none;
+}
+
+.pilt {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.pilt:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.pilt:active {
+  transform: scale(90%);
+}
