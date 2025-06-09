@@ -18,7 +18,7 @@
 }
 
 .pilt {
-  width: 200px;
+  height: 100px;
   border-radius: 10px;
 }
 
@@ -29,4 +29,17 @@
 
 .pilt:active {
   transform: scale(90%);
+}
+
+.aktiivne {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.error-text {
+  color: red;
+}
+
+.error-input {
+  border: 1px solid red;
 }
