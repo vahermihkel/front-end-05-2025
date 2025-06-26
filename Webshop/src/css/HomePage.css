@@ -1,0 +1,23 @@
+.products {
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); */
+}
+
+.home-product {
+  border: 1px solid lightgray;
+}
+
+.home-title {
+  height: 80px;
+}
+
+.home-picture {
+  width: 150px;
+  height: 150px;
+}
+
+.home-price {
+  font-weight: bold;
+}
