@@ -1,1 +1,10 @@
-["Tesla", "BMW", "Nobe", "Lexus", "Mercedes", "Lamborghini", "Ferrari"]
+[
+  {"nimi": "Tesla", "hind": 85000, "aktiivne": true, "pilt": "https://preview.thenewsmarket.com/Previews/NCAP/StillAssets/1920x1080/684698_v3.jpg"},
+  {"nimi": "BMW", "hind": 35000, "aktiivne": true, "pilt": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/BMW_G20_%282022%29_IMG_7316_%282%29.jpg/960px-BMW_G20_%282022%29_IMG_7316_%282%29.jpg"},
+  {"nimi": "Nobe", "hind": 25000, "aktiivne": true, "pilt": "https://i0.wp.com/accelerista.com/wp-content/uploads/2018/06/nobe.jpg"},
+  {"nimi": "Lexus", "hind": 65000, "aktiivne": true, "pilt": "https://www.eckersleys.com.au/media/wysiwyg/blog/Projects/Images/How_to_draw/v2_thumbnail2.jpg"},
+  {"nimi": "Mercedes", "hind": 75000, "aktiivne": true, "pilt": "https://hips.hearstapps.com/hmg-prod/images/2023-mercedes-amg-c63-s-e-performance-109-65d79697e865a.jpg"},
+  {"nimi": "Lamborghini", "hind": 185000, "aktiivne": false, "pilt": "https://www.eckersleys.com.au/media/wysiwyg/blog/Projects/Images/How_to_draw/v2_thumbnail2.jpg"},
+  {"nimi": "Ferrari", "hind": 125000, "aktiivne": false, "pilt": "https://carwow-uk-wp-1.imgix.net/2025-Ferrari-F80-front-static-lead.png"},
+  {"nimi": "Ford", "hind": 55000, "aktiivne": true, "pilt": "https://uscar.ee/wp-content/uploads/2023/12/FORD_MUSTANG_ALUS.png"}
+]

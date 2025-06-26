@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import hinnadFailist from "../../data/hinnad.json"
 import ArraysHome from "./ArraysHome";
+import { Link } from "react-router-dom";
 
 // renderdamine --> väljakuvamine
 // re-renderdamine --> setteriga HTMLi muutmine
@@ -44,36 +45,51 @@ function Hinnad() {          //         0   1  2  3  4  5  6  7  8   9
 
   // 31,135,54,9,77,45,90,123,234,87        31-135=-100
   const sorteeriKahanevalt = () => {
-    hinnad.sort((a,b) => b - a);
+    hinnad.sort((a,b) => b.number - a.number);
     setHinnad(hinnad.slice());
   }
 
   const sorteeriKasvavalt = () => {
-    hinnad.sort((a,b) => a - b);
+    hinnad.sort((a,b) => a.number - b.number);
     setHinnad(hinnad.slice());
   }
 
-  const filtreeriVaiksemaidKui50 = () => {
-    const vastus = hinnadFailist.filter(hind => hind < 50);
+  const filtreeriVaiksemaidKui25 = () => {
+    const vastus = hinnadFailist.filter(hind => hind.number < 25);
     setHinnad(vastus);
   }
 
-  const filtreeriSuuremadKui100 = () => {
-    const vastus = hinnadFailist.filter(hind => hind > 100);
+  const filtreeriSuuremadKui50 = () => {
+    const vastus = hinnadFailist.filter(hind => hind.number > 50);
     setHinnad(vastus);
   }
 
+  const arvutaKokku = () => {
+    let summa = 0;
+    hinnad.forEach(hind => summa = summa + hind.number);
+    return summa;
+  }
+
+  // tegelikkuses peavad kõik use-d olema kõige üleval, mitte funktsioonide all
+  const otsingRef = useRef();
   
+  // tegelikkuses peaks olema kõige üleval, sest HTML-s on kõige üleval
+  function otsi() {
+    const vastus = hinnadFailist.filter(hind => hind.number.toString().includes(otsingRef.current.value));
+    setHinnad(vastus);
+  }
 
   return (
     <div>
       <ArraysHome />
+      <label>Otsi</label>
+      <input ref={otsingRef} onChange={otsi} type="number" />
 
       <button onClick={sorteeriKahanevalt}>Sorteeri kahanevalt</button>
       <button onClick={sorteeriKasvavalt}>Sorteeri kahanevalt</button>
       <br /><br />
-      <button onClick={filtreeriVaiksemaidKui50}>Jäta alles väiksemad kui 50</button>
-      <button onClick={filtreeriSuuremadKui100}>Jäta alles suuremad kui 100</button>
+      <button onClick={filtreeriVaiksemaidKui25}>Jäta alles väiksemad kui 25</button>
+      <button onClick={filtreeriSuuremadKui50}>Jäta alles suuremad kui 50</button>
       <br /><br />
       <button onClick={() => setHinnad([])}>Tühjenda</button>
       <button onClick={kustutaEsimene}>Kustuta esimene</button>
@@ -88,10 +104,17 @@ function Hinnad() {          //         0   1  2  3  4  5  6  7  8   9
                   54        2
       */}
       {hinnad.map((hind, index) => 
-        <div key={hind}>
-          {hind}
+        <div key={hind.number}>
+          <div>{hind.number}</div>
+          <div>{hind.sonana}</div>
           <button onClick={() => kustuta(index)}>x</button>
+          {/* kui esimest kaldkriipsu pole, siis liidab olemasolevale URL-le juurde */}
+          <Link to={"/hind/" + index}>
+            <button>Vt lähemalt</button>
+          </Link>
         </div>)}
+
+        <div>Hinnad kokku: {arvutaKokku()} €</div>
     </div>
   )
 }
@@ -101,3 +124,7 @@ export default Hinnad
 // onClick={() => setHinnad([])} --> panen () => ja lõppu () kui saadan midagi kaasa
 // onClick={kustutaEsimene}  --> ei pane () => ja lõppu () kui mul pole midagi saata
 // onClick={kustutaNeljas(3)} --> tekitab infinite loop errori
+
+// HINNAD:
+// {"number": 10, "sonana": "kümme"},
+// {"number": 123, "sonana": "sada kakskümmend kolm"}

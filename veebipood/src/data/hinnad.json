@@ -1,1 +1,12 @@
-[31,135,54,9,77,45,90,123,234,87]
+[
+    {"number": 2, "sonana": "kaks"},
+    {"number": 25, "sonana": "kakskümmend viis"},
+    {"number": 26, "sonana": "kakskümmend kuus"},
+    {"number": 28, "sonana": "kakskümmend kaheksa"},
+    {"number": 29, "sonana": "kakskümmend üheksa"},
+    {"number": 30, "sonana": "kolmkümmend"},
+    {"number": 43, "sonana": "nelikümmend kolm"},
+    {"number": 55, "sonana": "viiskümmend viis"},
+    {"number": 95, "sonana": "üheksakümmend viis"},
+    {"number": 8, "sonana": "kaheksa"}
+]

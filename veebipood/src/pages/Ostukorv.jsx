@@ -1,13 +1,25 @@
 import { useState } from "react"
+//import ostukorvFailist from "../data/ostukorv.json"
 
 function Ostukorv() {
   //     HTML    millega muudan          algväärtus
-  const [tooted, setTooted] = useState(["Coca", "Fanta", "Sprite", "Red bull"]);
+  const [tooted, setTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
 
   const kustuta = (index) => {
     tooted.splice(index,1);
     // setTooted([...tooted]); ChatGPT
     setTooted(tooted.slice());
+    localStorage.setItem("ostukorv", JSON.stringify(tooted));
+  }
+
+  const arvutaKokku = () => {
+    let summa = 0;
+    // summa = summa + 1;
+    // summa = summa + 2;
+    // summa = summa + 1;
+    // summa = summa + 2;
+    tooted.forEach(toode => summa = summa + toode.hind);
+    return summa;
   }
 
   return (
@@ -22,13 +34,13 @@ function Ostukorv() {
 
 
       {tooted.map((toode, index) => 
-        <div key={toode}>
-          {toode}
+        <div key={index}>
+          {toode.nimi} {toode.hind}€
           <button onClick={() => kustuta(index)}>x</button>
         </div>)}
 
       <br /><br />
-      <div>Ostukorvi kogusumma: xx €</div>
+      <div>Ostukorvi kogusumma: {arvutaKokku()} €</div>
     </div>
   )
 }

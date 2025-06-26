@@ -1,9 +1,9 @@
 [
-  "Ülemiste",
-  "Rocca al Mare",
-  "Magistrali",
-  "Vesse",
-  "Kristiine",
-  "Järveotsa",
-  "Viru keskus"
+  {"keskus": "Ülemiste", "tel": "5413211", "aadress": "Suur-Sõjamäe 4"},
+  {"keskus": "Rocca al Mare", "tel": "5413222", "aadress": "Loomaaia 12"},
+  {"keskus": "Magistrali", "tel": "5413233", "aadress": "Magistrali 6"},
+  {"keskus": "Vesse", "tel": "5413244", "aadress": "Vesse 321"},
+  {"keskus": "Kristiine", "tel": "5413255", "aadress": "Endla 54"},
+  {"keskus": "Järveotsa", "tel": "5413266", "aadress": "Järve 5"},
+  {"keskus": "Viru keskus", "tel": "5413277", "aadress": "Tammsaare park 21"}
 ]

@@ -22,6 +22,28 @@ import HaldaTootajad from './pages/halda/HaldaTootajad';
 import HaldaTooted from './pages/halda/HaldaTooted';
 import ArraysHome from './pages/arrays/ArraysHome';
 import HaldaHome from './pages/halda/HaldaHome';
+import MuudaAuto from './pages/muuda/MuudaAuto';
+import MuudaEsindus from './pages/muuda/MuudaEsindus';
+import MuudaHind from './pages/muuda/MuudaHind';
+import MuudaKasutaja from './pages/muuda/MuudaKasutaja';
+import MuudaTootaja from './pages/muuda/MuudaTootaja';
+import MuudaToode from './pages/muuda/MuudaToode';
+import YksAuto from './pages/yks/YksAuto';
+import YksEsindus from './pages/yks/YksEsindus';
+import YksHind from './pages/yks/YksHind';
+import YksKasutaja from './pages/yks/YksKasutaja';
+import YksTootaja from './pages/yks/YksTootaja';
+import YksToode from './pages/yks/YksToode';
+import Kaart from './pages/Kaart';
+import { ContactUs } from './pages/ContactUs';
+import ApiHome from './pages/api/ApiHome';
+import Cars from './pages/api/Cars';
+import Countries from './pages/api/Countries';
+import Tarnija1 from './pages/api/Tarnija1';
+import Tarnija2 from './pages/api/Tarnija2';
+import Tarnija3 from './pages/api/Tarnija3';
+import Vocabulary from './pages/api/Vocabulary';
+import ParcelMachines from './pages/api/ParcelMachines';
 
 function App() {
 
@@ -53,7 +75,31 @@ function App() {
         <Route path='/halda-tootajad' element={ <HaldaTootajad/> } />
         <Route path='/halda-tooted' element={ <HaldaTooted/> } />
 
+        <Route path='/auto/:autoNimi' element={ <YksAuto/> } />
+        <Route path='/esindus/:keskus' element={ <YksEsindus/> } />
+        <Route path='/hind/:index' element={ <YksHind/> } />
+        <Route path='/kasutaja' element={ <YksKasutaja/> } />
+        <Route path='/tootaja' element={ <YksTootaja/> } />
+        <Route path='/toode' element={ <YksToode/> } />
 
+        <Route path='/muuda-auto/:index' element={ <MuudaAuto/> } />
+        <Route path='/muuda-esindus/:index' element={ <MuudaEsindus/> } />
+        <Route path='/muuda-hind/:index' element={ <MuudaHind/> } />
+        <Route path='/muuda-kasutaja' element={ <MuudaKasutaja/> } />
+        <Route path='/muuda-tootaja' element={ <MuudaTootaja/> } />
+        <Route path='/muuda-toode' element={ <MuudaToode/> } />
+
+        <Route path='/kaart' element={ <Kaart/> } />
+        <Route path='/kontakteeru' element={ <ContactUs/> } />
+
+        <Route path='/api-home' element={ <ApiHome/> } />
+        <Route path='/cars' element={ <Cars/> } />
+        <Route path='/countries' element={ <Countries/> } />
+        <Route path='/tarnija1' element={ <Tarnija1/> } />
+        <Route path='/tarnija2' element={ <Tarnija2/> } />
+        <Route path='/tarnija3' element={ <Tarnija3/> } />
+        <Route path='/vocabulary' element={ <Vocabulary/> } />
+        <Route path='/parcelmachines' element={ <ParcelMachines/> } />
 
         <Route path='/*' element={ <NotFound/> } />
       </Routes>

@@ -1,0 +1,12 @@
+[
+    {"nimi": "Coca", "hind": 1.50, "aktiivne": true, "pilt": "https://www.coca-cola.com/content/dam/onexp/ee/et/home-images/brand/coca-cola/et_coca-cola-original-taste_Product_image_desktop_mobile_750x750_v1.jpg"},
+    {"nimi": "Fanta", "hind": 1.50, "aktiivne": true, "pilt": "https://www.selver.ee/img/800/800/resize/5/0/5000112651638.jpg"},
+    {"nimi": "Sprite", "hind": 1.50, "aktiivne": true, "pilt": "https://ghanaprovisions.com/cdn/shop/products/sprite.jpg?v=1410466382"},
+    {"nimi": "Vichy", "hind": 1, "aktiivne": true, "pilt": "https://cdn.s-cloud.fi/v1/w1200h630@_q75/assets/dam-id/8mKCNffqq8u9PPndNJmql5.jpg" },
+    {"nimi": "Red Bull", "hind": 2, "aktiivne": true, "pilt": "https://media.istockphoto.com/id/533445415/photo/red-bull.jpg?s=612x612&w=0&k=20&c=jQrQJnaec63xljTKTFq4NbxudOqFzVyq7YeQZwPcOMo="},
+    {"nimi": "Aura", "hind": 1, "aktiivne": true, "pilt": "https://rimibaltic-res.cloudinary.com/image/upload/b_white,c_limit,dpr_3.0,f_auto,q_auto:low,w_400/d_ecommerce:backend-fallback.png/MAT_1356334_PCE_EE"},
+    {"nimi": "Monster", "hind": 2, "aktiivne": true, "pilt": "https://m.media-amazon.com/images/I/51b4rbJ2U-L.jpg"},
+    {"nimi": "Sanpellegrino", "hind": 1.50, "aktiivne": true, "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD8AM5f1wACoXJBaQ8aw2xECZmxQMNiiBQQA&s"},
+    {"nimi": "Realist", "hind": 2, "aktiivne": true, "pilt": "https://kontorikaubad.ee/sites/default/files/styles/large/public/product-images/realist-strawberry-rhubarb-craft-soda-6254248542a84.png?itok=I42o7ASS"},
+    {"nimi": "Evian", "hind": 2, "aktiivne": true, "pilt": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfpnbfdM3qTfUU2xR9kaSnAzx0KSTZDjlOSA&s"}
+]

@@ -34,9 +34,9 @@ function HaldaHinnad() {
         </thead>
         <tbody>
           {hinnad.map((hind, index) => 
-            <tr key={hind}>
+            <tr key={hind.number}>
               <td>{index}</td>
-              <td>{hind}</td>
+              <td>{hind.number}</td>
               <td><button onClick={() => kustuta(index)}>x</button></td>
             </tr>)}
         </tbody>

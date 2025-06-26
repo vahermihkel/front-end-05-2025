@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -42,4 +42,16 @@
 
 .error-input {
   border: 1px solid red;
+}
+
+.aktiivne-auto {
+  background-color: rgb(230, 255, 230);
+}
+
+.mitteaktiivne-auto {
+  background-color: rgb(254, 216, 216);
+}
+
+td, th {
+  border: 1px solid black;
 }
