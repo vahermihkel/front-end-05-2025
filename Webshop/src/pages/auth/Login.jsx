@@ -1,6 +1,10 @@
+import { useContext } from "react"
+import { Link } from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext"
 
 
 function Login() {
+  const {setLoggedIn} = useContext(AuthContext);
 
   return (
     <div>
@@ -8,10 +12,10 @@ function Login() {
       <input type="email"  /> <br />
       <label>Password</label> <br />
       <input type="password"  /> <br />
-      <button>Login</button> <br />
+      <button onClick={() => setLoggedIn(true)}>Login</button> <br />
+      <Link to="/signup">
       <button>Register</button> <br />
-      <button>Reset Password</button> <br />
-      <button>Logout</button> <br />
+      </Link>
     </div>
   )
 }

@@ -1,30 +1,39 @@
-import { useState, useRef } from "react";
-import productsFromFile from "../../data/products.json";
+import { useState, useRef, useEffect } from "react";
+// import productsFromFile from "../../data/products.json";
 import { Link } from "react-router-dom";
-import AdminHome from "./AdminHome";
+import AdminHome from "./AdminHome.tsx";
 import { toast } from "react-toastify";
+import { Product } from "../../models/Product";
 
 function MaintainProducts() {
-  const [products, setProducts] = useState(productsFromFile.slice());
-  const searchRef = useRef();
+  const [products, setProducts] = useState<Product[]>([]); // väljanäidatavad tooted. kõikuvas seisundis -> HTMLs
+  const [dbProducts, setDbProducts] = useState<Product[]>([]); // andmebaasitooted. koguaeg samas seisus. varem productsFromFile
+  const searchRef = useRef<HTMLInputElement>(null);
+  const url = "https://mihkel-05-2025-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 
-  const deleteProduct = (index) => {
-    const updatedProducts = products.slice();
-    const deletedProduct = updatedProducts[index]?.title || "Product";
-    updatedProducts.splice(index, 1);
-    setProducts(updatedProducts);
-    toast.error(`${deletedProduct} deleted!`);
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => {
+        setProducts(json || []);
+        setDbProducts(json || []);
+      })
+  }, []);
+
+  const deleteProduct = (index: number) => {
+    dbProducts.splice(index, 1);
+    setProducts(dbProducts.slice());
+    toast.error(`Product deleted!`);
+    fetch(url, {method: "PUT", body: JSON.stringify(dbProducts)})
   };
 
   const search = () => {
-    const keyword = searchRef.current.value.toLowerCase();
-
-    if (keyword === "") {
-      setProducts(productsFromFile.slice());
+    if (searchRef.current === null) {
       return;
     }
+    const keyword = searchRef.current.value.toLowerCase();
 
-    const result = products.filter((product) =>
+    const result = dbProducts.filter((product) =>
       product.title.toLowerCase().includes(keyword)
     );
     setProducts(result);

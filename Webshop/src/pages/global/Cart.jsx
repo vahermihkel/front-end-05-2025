@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import "../../css/Cart.css"
 import minus from "../../assets/minus.png"
 import plus from "../../assets/plus.png"
 import deleteButton from "../../assets/remove.png"
+import { CartSumContext } from "../../context/CartSumContext";
 
 
 function Cart() {
   const [products, setProducts] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+  const {cartSum, setCartSum} = useContext(CartSumContext);
 
   const remove = (index) => {
+    setCartSum(cartSum - products[index].price);
     // const updatedProducts = [...products];
     // const removedProduct = updatedProducts[index]?.title || "Product";
     products.splice(index, 1);
@@ -19,6 +22,7 @@ function Cart() {
   };
 
   const emptyCart = () => {
+    setCartSum(0);
     setProducts([]);
     localStorage.setItem("cart", JSON.stringify([]));
     toast.info("Cart emptied");

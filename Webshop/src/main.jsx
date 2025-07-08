@@ -6,11 +6,17 @@ import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './App.jsx'
+import { CartSumContextProvider } from './context/CartSumContextProvider.jsx';
+import { AuthContextProvider } from './context/AuthContextProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <CartSumContextProvider>
+        <AuthContextProvider>
+          <App />
+        </AuthContextProvider>
+      </CartSumContextProvider>
     </BrowserRouter>
   </StrictMode>,
 )
@@ -30,9 +36,9 @@ createRoot(document.getElementById('root')).render(
 //11. T 17.06 kell 9.00 kokkuarvutused, otsing, Number(). bootstrap, leaflet, emailjs
 //12. E 23.06 kell 12.00 API otspunktid
 //13. N 26.06 kell 9.00 alustame Webshop (eng projekt) --> kujundus
-//14. E 30.06 kell 9.00 --> andmebaas, context (globaalne muutuja)
-//15. N 03.07 kell 9.00-12.00 (04.07 Elen tagasi) --> kogus ostukorvis, mobiilivaade
-//16. E 07.07 kell 12.30  (organiseerin) ?????
-//17. N 10.07 kell 9.00   (14.07 Elen tööle) --> alamkomponentides andmete saatmine
+//14. E 30.06 kell 9.00 --> andmebaas
+//15. N 03.07.kell 9.00 context (globaalne muutuja), TypeScript
+//16. E 07.07 kell 12.30:  kogus ostukorvis, mobiilivaade
+//17. N 10.07 kell 9.00-12.15  12.30-15.45   (14.07 Elen tööle) --> alamkomponentides andmete saatmine
 //18. N 24.07??? kell 9.00-10.30
 
